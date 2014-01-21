@@ -7,6 +7,7 @@
 //
 
 #import "Foundation/Foundation.h"
+#import "Reachability.h"
 #import "CPMoviesViewController.h"
 #import "CPMovieDetailViewController.h"
 #import "CPMovieCell.h"
@@ -15,6 +16,7 @@
 
 @interface CPMoviesViewController ()
 @property (strong, nonatomic) NSArray *movies;
+@property (strong, nonatomic) Reachability *reach;
 
 - (void)doRefresh;
 - (void)parseMovies:(NSArray *)movies_json;
@@ -42,6 +44,62 @@
     [SVProgressHUD show];
     
     [self doRefresh];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"CPMoviesViewController: viewWillAppear");
+    [super viewWillAppear:animated];
+    [self reachabilityStart];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"CPMoviesViewController: viewWillDisappear");
+    [super viewWillDisappear:animated];
+    [self reachabilityStop];
+}
+
+- (void)reachabilityStart
+{
+    self.reach = [Reachability reachabilityWithHostname:@"api.rottentomatoes.com"];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name:kReachabilityChangedNotification
+                                               object:nil];
+    [self.reach startNotifier];
+}
+
+- (void)reachabilityStop
+{
+    if (self.reach) {
+        [self.reach stopNotifier];
+        self.reach = nil;
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kReachabilityChangedNotification
+                                                  object:nil];
+}
+
+- (BOOL)reachabilityChanged:(NSNotification*) note
+{
+    BOOL status = YES;
+    NSLog(@"reachabilityChanged");
+    
+    Reachability * reach = [note object];
+    
+    if([reach isReachable])
+    {
+        //notificationLabel.text = @"Notification Says Reachable"
+        status = YES;
+        NSLog(@"NetWork is Available");
+    }
+    else
+    {
+        status = NO;
+        NSLog(@"NetWork is Not Available");
+    }
+    return status;
 }
 
 #pragma mark - Table View Methods
