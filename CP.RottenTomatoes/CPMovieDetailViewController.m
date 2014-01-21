@@ -7,10 +7,11 @@
 //
 
 #import "CPMovieDetailViewController.h"
+#import "UIKit+AFNetworking.h"
 
 @interface CPMovieDetailViewController ()
 @property (strong, nonatomic) CPMovieSummaryModel *model;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *posterImageView;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *castsLabel;
 @end
@@ -21,7 +22,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.scrollView.contentSize = CGSizeMake(320, 700);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,6 +37,9 @@
 - (void)updateUI
 {
     self.title = self.model.title;
+    self.posterImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.posterImageView.clipsToBounds = YES;
+    [self.posterImageView setImageWithURL:[NSURL URLWithString:self.model.originalPosterURL]];
     self.summaryLabel.text = self.model.synopsis;
     self.castsLabel.text = self.model.casts;
 }

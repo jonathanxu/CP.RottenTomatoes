@@ -7,8 +7,10 @@
 //
 
 #import "CPMovieCell.h"
+#import "UIKit+AFNetworking.h"
 
 @interface CPMovieCell()
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UILabel *castsLabel;
@@ -34,6 +36,7 @@
 
 - (void)setModel:(CPMovieSummaryModel *) model
 {
+    [self.thumbnailImageView setImageWithURL:[NSURL URLWithString:model.thumbnailPosterURL]];
     self.titleLabel.text = model.title;
     self.synopsisLabel.text = model.synopsis;
     self.castsLabel.text = model.casts;
