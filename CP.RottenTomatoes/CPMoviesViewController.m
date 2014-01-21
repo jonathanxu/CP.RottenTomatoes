@@ -31,10 +31,10 @@
     [self.refreshControl endRefreshing];
 }
 
-// use viewWillAppear instead of init or viewDidLoad for fetching rotten tomatoes data
-- (void)viewWillAppear:(BOOL)animated
+// use viewDidLoad instead of init for fetching rotten tomatoes data
+- (void)viewDidLoad
 {
-    [super viewWillAppear:animated];
+    [super viewDidLoad];
     [self doRefresh];
 }
 

@@ -36,8 +36,13 @@
 
 - (void)updateUI
 {
+    self.title = self.model.title;
     self.summaryLabel.text = self.model.synopsis;
     self.castsLabel.text = self.model.casts;
+}
+
+- (IBAction)closeBarButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
