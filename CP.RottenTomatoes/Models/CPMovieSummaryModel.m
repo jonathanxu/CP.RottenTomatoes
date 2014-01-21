@@ -13,7 +13,8 @@
 - (instancetype)init:(NSString *)title
             synopsis:(NSString *)synopsis
                casts:(NSString *)casts
-           boxArtURL:(NSString *)boxArtURL
+  thumbnailPosterURL:(NSString *)thumbnailPosterURL
+   originalPosterURL:(NSString *)originalPosterURL
 {
     self = [super init];
     
@@ -21,7 +22,8 @@
         self.title = title;
         self.synopsis = synopsis;
         self.casts = casts;
-        self.boxArtURL = boxArtURL;
+        self.thumbnailPosterURL = thumbnailPosterURL;
+        self.originalPosterURL = originalPosterURL;
     }
     
     return self;

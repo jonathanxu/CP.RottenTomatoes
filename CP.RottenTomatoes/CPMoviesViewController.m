@@ -63,12 +63,15 @@
             }
             NSString *casts = [castsArray componentsJoinedByString:@", "];
             
-            NSString *boxArtURL = @"TODO";
+            NSDictionary *poster = [movie_json objectForKey:@"posters"];
+            NSString *thumbnailPosterURL = [poster objectForKey:@"thumbnail"];
+            NSString *originalPosterURL = [poster objectForKey:@"original"];
             
             CPMovieSummaryModel *movie = [[CPMovieSummaryModel alloc] init:title
                                                                   synopsis:synopsis
                                                                      casts:casts
-                                                                 boxArtURL:boxArtURL];
+                                                        thumbnailPosterURL:thumbnailPosterURL
+                                                         originalPosterURL:originalPosterURL];
             [movies addObject:movie];
         }
         
