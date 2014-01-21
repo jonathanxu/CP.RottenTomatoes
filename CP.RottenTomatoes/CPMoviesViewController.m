@@ -8,6 +8,7 @@
 
 #import "Foundation/Foundation.h"
 #import "CPMoviesViewController.h"
+#import "CPMovieDetailViewController.h"
 #import "CPMovieCell.h"
 #import "Models/CPMovieSummaryModel.h"
 
@@ -60,6 +61,19 @@
 - (IBAction)refresh
 {
     [self doRefresh];
+}
+
+#pragma mark - Segue into Detail View
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"CPMoviesViewController: prepareForSegue");
+    if ([segue.identifier isEqualToString:@"ViewMovieDetail"]) {
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        NSLog(@"CPMoviesViewController: prepareForSegue, row %ld", (long)path.row);
+        CPMovieDetailViewController *dvc = (CPMovieDetailViewController *)segue.destinationViewController;
+        [dvc setMovieModelForSegue:self.movies[path.row]];
+    }
 }
 
 #pragma mark - Fetch Data

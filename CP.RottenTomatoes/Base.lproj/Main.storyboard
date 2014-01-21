@@ -66,7 +66,7 @@
                                     <outlet property="castsLabel" destination="2ti-Uh-4Eq" id="9jW-Cq-dBE"/>
                                     <outlet property="synopsisLabel" destination="o2V-SR-Wrl" id="7z3-NQ-AAM"/>
                                     <outlet property="titleLabel" destination="gTd-Ia-48W" id="Px3-H3-WXu"/>
-                                    <segue destination="xs8-uM-y7l" kind="push" id="x39-BJ-XGS"/>
+                                    <segue destination="xs8-uM-y7l" kind="push" identifier="ViewMovieDetail" id="x39-BJ-XGS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="897" y="137"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="f3g-sS-nKi">
             <objects>
-                <viewController id="xs8-uM-y7l" sceneMemberID="viewController">
+                <viewController id="xs8-uM-y7l" customClass="CPMovieDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kky-bb-WgT"/>
                         <viewControllerLayoutGuide type="bottom" id="au2-n6-Bcf"/>
@@ -98,9 +98,43 @@
                     <view key="view" contentMode="scaleToFill" id="fV3-Ow-4TE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W5B-XE-u7y">
+                                <rect key="frame" x="0.0" y="62" width="320" height="203"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfT-zR-dIE">
+                                <rect key="frame" x="20" y="273" width="286" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="Nuz-RX-TyS">
+                                <rect key="frame" x="20" y="302" width="286" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cast" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWT-vy-Uz7">
+                                <rect key="frame" x="20" y="396" width="286" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="E2m-IO-UgB">
+                                <rect key="frame" x="20" y="425" width="286" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="XBN-Qo-9n5"/>
+                    <connections>
+                        <outlet property="castsLabel" destination="E2m-IO-UgB" id="KIn-md-NAZ"/>
+                        <outlet property="summaryLabel" destination="Nuz-RX-TyS" id="Gjb-qO-WhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUZ-re-QPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
