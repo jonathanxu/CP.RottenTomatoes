@@ -1,5 +1,5 @@
 //
-//  CPViewController.h
+//  CPMoviesViewController.h
 //  CP.RottenTomatoes
 //
 //  Created by Jonathan Xu on 1/20/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CPViewController : UIViewController
+@interface CPMoviesViewController : UIViewController
 
 @end

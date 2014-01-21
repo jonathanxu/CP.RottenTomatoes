@@ -14,13 +14,13 @@
 		3E92346B188E4E6A007E6A6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92346A188E4E6A007E6A6B /* main.m */; };
 		3E92346F188E4E6A007E6A6B /* CPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E92346E188E4E6A007E6A6B /* CPAppDelegate.m */; };
 		3E923472188E4E6A007E6A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E923470188E4E6A007E6A6B /* Main.storyboard */; };
-		3E923475188E4E6A007E6A6B /* CPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E923474188E4E6A007E6A6B /* CPViewController.m */; };
 		3E923477188E4E6A007E6A6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E923476188E4E6A007E6A6B /* Images.xcassets */; };
 		3E92347E188E4E6A007E6A6B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E92347D188E4E6A007E6A6B /* XCTest.framework */; };
 		3E92347F188E4E6A007E6A6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E92345E188E4E6A007E6A6B /* Foundation.framework */; };
 		3E923480188E4E6A007E6A6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E923462188E4E6A007E6A6B /* UIKit.framework */; };
 		3E923488188E4E6A007E6A6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E923486188E4E6A007E6A6B /* InfoPlist.strings */; };
 		3E92348A188E4E6A007E6A6B /* CP_RottenTomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E923489188E4E6A007E6A6B /* CP_RottenTomatoesTests.m */; };
+		3E923495188E500B007E6A6B /* CPMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E923494188E500B007E6A6B /* CPMoviesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		3E92346D188E4E6A007E6A6B /* CPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAppDelegate.h; sourceTree = "<group>"; };
 		3E92346E188E4E6A007E6A6B /* CPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAppDelegate.m; sourceTree = "<group>"; };
 		3E923471188E4E6A007E6A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3E923473188E4E6A007E6A6B /* CPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPViewController.h; sourceTree = "<group>"; };
-		3E923474188E4E6A007E6A6B /* CPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPViewController.m; sourceTree = "<group>"; };
 		3E923476188E4E6A007E6A6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E92347C188E4E6A007E6A6B /* CP.RottenTomatoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CP.RottenTomatoesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E92347D188E4E6A007E6A6B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3E923485188E4E6A007E6A6B /* CP.RottenTomatoesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CP.RottenTomatoesTests-Info.plist"; sourceTree = "<group>"; };
 		3E923487188E4E6A007E6A6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E923489188E4E6A007E6A6B /* CP_RottenTomatoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CP_RottenTomatoesTests.m; sourceTree = "<group>"; };
+		3E923493188E500B007E6A6B /* CPMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMoviesViewController.h; sourceTree = "<group>"; };
+		3E923494188E500B007E6A6B /* CPMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMoviesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 				3E92346D188E4E6A007E6A6B /* CPAppDelegate.h */,
 				3E92346E188E4E6A007E6A6B /* CPAppDelegate.m */,
 				3E923470188E4E6A007E6A6B /* Main.storyboard */,
-				3E923473188E4E6A007E6A6B /* CPViewController.h */,
-				3E923474188E4E6A007E6A6B /* CPViewController.m */,
+				3E923493188E500B007E6A6B /* CPMoviesViewController.h */,
+				3E923494188E500B007E6A6B /* CPMoviesViewController.m */,
 				3E923476188E4E6A007E6A6B /* Images.xcassets */,
 				3E923465188E4E6A007E6A6B /* Supporting Files */,
 			);
@@ -251,8 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E92346B188E4E6A007E6A6B /* main.m in Sources */,
+				3E923495188E500B007E6A6B /* CPMoviesViewController.m in Sources */,
 				3E92346F188E4E6A007E6A6B /* CPAppDelegate.m in Sources */,
-				3E923475188E4E6A007E6A6B /* CPViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
