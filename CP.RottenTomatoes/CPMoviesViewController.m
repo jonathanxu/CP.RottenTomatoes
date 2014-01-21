@@ -69,7 +69,8 @@
 {
     NSLog(@"CPMoviesViewController: prepareForSegue");
     if ([segue.identifier isEqualToString:@"ViewMovieDetail"]) {
-        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        UITableViewCell *selectedCell = (UITableViewCell *)sender;
+        NSIndexPath *path = [self.tableView indexPathForCell:selectedCell];
         NSLog(@"CPMoviesViewController: prepareForSegue, row %ld", (long)path.row);
         CPMovieDetailViewController *dvc = (CPMovieDetailViewController *)segue.destinationViewController;
         [dvc setMovieModelForSegue:self.movies[path.row]];
