@@ -97,6 +97,7 @@
         status = YES;
         NSLog(@"NetWork is Available");
         [TSMessage dismissActiveNotification];
+        [self doRefresh];
     }
     else
     {
