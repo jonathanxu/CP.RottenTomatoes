@@ -11,6 +11,7 @@
 #import "CPMovieDetailViewController.h"
 #import "CPMovieCell.h"
 #import "Models/CPMovieSummaryModel.h"
+#import "SVProgressHUD.h"
 
 @interface CPMoviesViewController ()
 @property (strong, nonatomic) NSArray *movies;
@@ -30,12 +31,16 @@
     _movies = movies;
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+    [SVProgressHUD dismiss];
 }
 
 // use viewDidLoad instead of init for fetching rotten tomatoes data
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [SVProgressHUD show];
+    
     [self doRefresh];
 }
 
