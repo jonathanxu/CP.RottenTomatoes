@@ -17,17 +17,23 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - HexColors (2.2.1)
   - Reachability (3.1.1)
   - SVProgressHUD (1.0)
+  - TSMessages (0.9.4):
+    - HexColors
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0.3)
   - Reachability (~> 3.1.1)
   - SVProgressHUD (~> 1.0)
+  - TSMessages (~> 0.9.4)
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
   Reachability: be4883bb93f31e38266ae3365e5600a317aae735
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
+  TSMessages: 5ab92604b02e49a755d2cc2baf114d2248a90977
 
 COCOAPODS: 0.29.0

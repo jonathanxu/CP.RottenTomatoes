@@ -13,6 +13,7 @@
 #import "CPMovieCell.h"
 #import "Models/CPMovieSummaryModel.h"
 #import "SVProgressHUD.h"
+#import "TSMessage.h"
 
 @interface CPMoviesViewController ()
 @property (strong, nonatomic) NSArray *movies;
@@ -60,6 +61,8 @@
     [self reachabilityStop];
 }
 
+#pragma mark - Reachability
+
 - (void)reachabilityStart
 {
     self.reach = [Reachability reachabilityWithHostname:@"api.rottentomatoes.com"];
@@ -93,11 +96,22 @@
         //notificationLabel.text = @"Notification Says Reachable"
         status = YES;
         NSLog(@"NetWork is Available");
+        [TSMessage dismissActiveNotification];
     }
     else
     {
         status = NO;
         NSLog(@"NetWork is Not Available");
+        [TSMessage showNotificationInViewController:self
+                                              title:@"Network Connection Lost"
+                                           subtitle:nil
+                                               type:TSMessageNotificationTypeError
+                                           duration:TSMessageNotificationDurationEndless
+                                           callback:nil
+                                        buttonTitle:nil
+                                     buttonCallback:nil
+                                         atPosition:TSMessageNotificationPositionTop
+                                canBeDismisedByUser:NO];
     }
     return status;
 }
