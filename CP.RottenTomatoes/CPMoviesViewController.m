@@ -51,7 +51,18 @@
         for (NSDictionary *movie_json in movies_json) {
             NSString *title = [movie_json objectForKey:@"title"];
             NSString *synopsis = [movie_json objectForKey:@"synopsis"];
-            NSString *casts = @"TODO";
+            
+            // deal with casts, which is in an array of dictionaries
+            NSArray *casts_json = [movie_json objectForKey:@"abridged_cast"];
+            NSMutableArray *castsArray = [[NSMutableArray alloc] init];
+            for (NSDictionary *cast_json in casts_json) {
+                NSString *currCast = [cast_json objectForKey:@"name"];
+                if (currCast) {
+                    [castsArray addObject:currCast];
+                }
+            }
+            NSString *casts = [castsArray componentsJoinedByString:@", "];
+            
             NSString *boxArtURL = @"TODO";
             
             CPMovieSummaryModel *movie = [[CPMovieSummaryModel alloc] init:title
