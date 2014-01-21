@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Jonathan Xu. All rights reserved.
 //
 
-#import "CPMoviesViewController.h"
 #import "Foundation/Foundation.h"
+#import "CPMoviesViewController.h"
+#import "CPMovieCell.h"
 #import "Models/CPMovieSummaryModel.h"
 
 @interface CPMoviesViewController ()
@@ -34,6 +35,21 @@
     [self loadMovies];
 }
 
+#pragma mark - Table View Methods
+- (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"CPMoviesViewController: tableView:numberOfRowsInSection");
+    return [self.movies count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CPMovieCell *cell = (CPMovieCell *)[tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
+    [cell setModel:self.movies[indexPath.row]];
+    return cell;
+}
+
+#pragma mark - Fetch Data
 
 - (void)loadMovies
 {
@@ -76,6 +92,7 @@
         }
         
         self.movies = movies;
+        [self.tableView reloadData];
     }];
 }
 
