@@ -13,6 +13,9 @@
 
 @interface CPMoviesViewController ()
 @property (strong, nonatomic) NSArray *movies;
+
+- (void)doRefresh;
+
 @end
 
 @implementation CPMoviesViewController
@@ -23,16 +26,15 @@
 {
     NSLog(@"CPMoviesViewController: setMovies");
     _movies = movies;
-    // TODO: refresh view
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
-// use viewDidLoad instead of init for fetching rotten tomatoes data
-- (void)viewDidLoad
+// use viewWillAppear instead of init or viewDidLoad for fetching rotten tomatoes data
+- (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"CPMoviesViewController: viewDidLoad");
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self loadMovies];
+    [super viewWillAppear:animated];
+    [self doRefresh];
 }
 
 #pragma mark - Table View Methods
@@ -49,14 +51,30 @@
     return cell;
 }
 
+- (void)doRefresh
+{
+    [self.refreshControl beginRefreshing];
+    [self loadMovies];
+}
+
+- (IBAction)refresh
+{
+    [self doRefresh];
+}
+
 #pragma mark - Fetch Data
 
 - (void)loadMovies
 {
+    NSLog(@"CPMoviesViewController: loadMovies");
+    
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apiKey=g9au4hv6khv6wzvzgt55gpqs";
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSLog(@"CPMoviesViewController: before async network request");
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+
+        NSLog(@"CPMoviesViewController: inside completion handler");
         id json = [NSJSONSerialization JSONObjectWithData:data
                                                   options:0
                                                     error:nil];
@@ -91,8 +109,11 @@
             [movies addObject:movie];
         }
         
+        NSLog(@"CPMoviesViewController: parsed movies");
+
         self.movies = movies;
-        [self.tableView reloadData];
+
+        NSLog(@"CPMoviesViewController: done with completion handler");
     }];
 }
 

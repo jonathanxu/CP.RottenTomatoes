@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="456" y="138"/>
         </scene>
-        <!--Movies View Controller-->
+        <!--Movies View Controller - Movies-->
         <scene sceneID="J0k-t6-Gi8">
             <objects>
                 <tableViewController id="VuR-dR-AI4" customClass="CPMoviesViewController" sceneMemberID="viewController">
@@ -66,6 +66,7 @@
                                     <outlet property="castsLabel" destination="2ti-Uh-4Eq" id="9jW-Cq-dBE"/>
                                     <outlet property="synopsisLabel" destination="o2V-SR-Wrl" id="7z3-NQ-AAM"/>
                                     <outlet property="titleLabel" destination="gTd-Ia-48W" id="Px3-H3-WXu"/>
+                                    <segue destination="xs8-uM-y7l" kind="push" id="x39-BJ-XGS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,11 +75,36 @@
                             <outlet property="delegate" destination="VuR-dR-AI4" id="R0d-Zw-Xjx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sK0-JN-QYN"/>
+                    <navigationItem key="navigationItem" title="Movies" id="sK0-JN-QYN"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="jux-ZF-Krc">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="VuR-dR-AI4" eventType="valueChanged" id="nTH-MV-Ezm"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5X3-ya-Pyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="897" y="137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="f3g-sS-nKi">
+            <objects>
+                <viewController id="xs8-uM-y7l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kky-bb-WgT"/>
+                        <viewControllerLayoutGuide type="bottom" id="au2-n6-Bcf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fV3-Ow-4TE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XBN-Qo-9n5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUZ-re-QPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321" y="138"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
