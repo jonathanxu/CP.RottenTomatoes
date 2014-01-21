@@ -7,7 +7,7 @@
 //
 
 #import "CPMovieCell.h"
-#import "UIKit+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface CPMovieCell()
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;

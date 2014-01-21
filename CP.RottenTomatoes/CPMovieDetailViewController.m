@@ -7,7 +7,7 @@
 //
 
 #import "CPMovieDetailViewController.h"
-#import "UIKit+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface CPMovieDetailViewController ()
 @property (strong, nonatomic) CPMovieSummaryModel *model;
