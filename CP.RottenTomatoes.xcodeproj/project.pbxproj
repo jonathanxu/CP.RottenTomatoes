@@ -21,6 +21,7 @@
 		3E923488188E4E6A007E6A6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E923486188E4E6A007E6A6B /* InfoPlist.strings */; };
 		3E92348A188E4E6A007E6A6B /* CP_RottenTomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E923489188E4E6A007E6A6B /* CP_RottenTomatoesTests.m */; };
 		3E923495188E500B007E6A6B /* CPMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E923494188E500B007E6A6B /* CPMoviesViewController.m */; };
+		3E923499188E574C007E6A6B /* CPMovieSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E923498188E574C007E6A6B /* CPMovieSummaryModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3E923489188E4E6A007E6A6B /* CP_RottenTomatoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CP_RottenTomatoesTests.m; sourceTree = "<group>"; };
 		3E923493188E500B007E6A6B /* CPMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPMoviesViewController.h; sourceTree = "<group>"; };
 		3E923494188E500B007E6A6B /* CPMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPMoviesViewController.m; sourceTree = "<group>"; };
+		3E923497188E574C007E6A6B /* CPMovieSummaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMovieSummaryModel.h; path = Models/CPMovieSummaryModel.h; sourceTree = "<group>"; };
+		3E923498188E574C007E6A6B /* CPMovieSummaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMovieSummaryModel.m; path = Models/CPMovieSummaryModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				3E923493188E500B007E6A6B /* CPMoviesViewController.h */,
 				3E923494188E500B007E6A6B /* CPMoviesViewController.m */,
 				3E923476188E4E6A007E6A6B /* Images.xcassets */,
+				3E923496188E5712007E6A6B /* Models */,
 				3E923465188E4E6A007E6A6B /* Supporting Files */,
 			);
 			path = CP.RottenTomatoes;
@@ -150,6 +154,15 @@
 				3E923486188E4E6A007E6A6B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E923496188E5712007E6A6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E923497188E574C007E6A6B /* CPMovieSummaryModel.h */,
+				3E923498188E574C007E6A6B /* CPMovieSummaryModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 			files = (
 				3E92346B188E4E6A007E6A6B /* main.m in Sources */,
 				3E923495188E500B007E6A6B /* CPMoviesViewController.m in Sources */,
+				3E923499188E574C007E6A6B /* CPMovieSummaryModel.m in Sources */,
 				3E92346F188E4E6A007E6A6B /* CPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
